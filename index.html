@@ -6,11 +6,44 @@
            <link rel="stylesheet" type="text/css" href="css/main.css">
            <script type="text/javascript" src="js/materialize.js"></script>
            <script type="text/javascript" src="js/materialize.min.js"></script>
+           <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+           <link rel="stylesheet" href="css/progressbar.css">
+          </head>
             </head>
             <body>
-	<div class="big-image">
-		
-	</div>
+	<div class="progress"> <span class="blue" style="width:0%;"><span>0%</span></span> </div>
+</section>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script type='text/javascript'>
+	function loading(percent){
+		$('.progress span').animate({width:percent},1000,function(){
+			$(this).children().html(percent);
+            if(percent=='100%'){
+                $(this).children().html('Loading Complete, Redirect to Home Page...&nbsp;&nbsp;&nbsp;&nbsp;');
+                setTimeout(function(){
+                    $('.container').fadeOut();
+					location.href="main.html";
+                },1000);
+            }
+		})
+	}
+  </script> 
+<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
+<script type="text/javascript">loading('5%');</script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script> 
+<script type="text/javascript">loading('20%');</script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script> 
+<script type="text/javascript">loading('40%');</script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script> 
+<script type="text/javascript">loading('70%');</script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.4.1/mootools-yui-compressed.js"></script> 
+<script type="text/javascript">loading('100%');</script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojo/dojo.xd.js"></script>
+<script type="text/javascript">
+
+  
+
+</script>
 
             </body>
             </html>
